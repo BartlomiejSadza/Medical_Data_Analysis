@@ -34,6 +34,9 @@ def majority(data):
     sorted_regions = sorted(regions.items(), key=lambda item: item[1], reverse=True)
     return sorted_regions
 
+# print('Majority of the individuals in descending order are from:')
+# for region, value in majority(data):
+#     print(f'{region} | {value} individuals')
 
-for region, value in majority(data):
-    print(region, value)
+
+# Looking at the different costs between smokers vs. non-smokers.

@@ -40,3 +40,21 @@ def majority(data):
 
 
 # Looking at the different costs between smokers vs. non-smokers.
+def smoking(data):
+    
+    smokers = []
+    non_smokers = []
+    
+    for row in data[1:]:
+        status = row[-3]
+        if status == 'no':
+            non_smokers.append(float(row[-1]))
+        else:
+            smokers.append(float(row[-1]))
+
+    average_smokers = round(sum(smokers) / len(smokers), 0)
+    average_non_smokers = round(sum(non_smokers) / len(non_smokers), 0)
+
+    return f'The average cost for smokers is: | {average_smokers}$ | and for non-smokers is: | {average_non_smokers}$ | which is a difference of | {average_smokers - average_non_smokers}$ (WHICH IS HUGE!) |'
+
+print(smoking(data))
